@@ -100,16 +100,16 @@
           </div>
           <aside>
             <h2>MESSAGE</h2>
-            <div class="message" style="padding-block: 16px">Lorem ipsum</div>
             <form>
+              <legend class="message" style="padding-block: 16px">Lorem ipsum</legend>
               <input type="text" placeholder="FIRST NAME" aria-label="First name form input" />
               <input type="text" placeholder="LAST NAME" aria-label="Last name form input" />
               <input type="text" placeholder="EMAIL" aria-label="Email form input" />
               <select aria-label="Select form">
-                <option value="Option 1" aria-label="Option 1">Option 1</option>
-                <option value="Option 2" aria-label="Option 2">Option 2</option>
-                <option value="Option 3" aria-label="Option 3">Option 3</option>
-                <option value="Option 4" aria-label="Option 4">Option 4</option>
+                <option value="Option 1">Option 1</option>
+                <option value="Option 2">Option 2</option>
+                <option value="Option 3">Option 3</option>
+                <option value="Option 4">Option 4</option>
               </select>
 
               <div style="display: flex; align-items: center; gap: 10px">
@@ -160,7 +160,7 @@
         <h3 style="padding-block-end: 16px">INFORMATION</h3>
 
         <ul>
-          <li style="position: relative">
+          <li class="list-item" style="position: relative">
             <div
               for="checkbox-3"
               class="items-title"
@@ -203,7 +203,7 @@
             </ul>
           </li>
 
-          <li style="position: relative">
+          <li class="list-item" style="position: relative">
             <div
               for="checkbox-4"
               class="items-title"
@@ -246,7 +246,7 @@
             </ul>
           </li>
 
-          <li style="position: relative">
+          <li class="list-item" style="position: relative">
             <div
               for="checkbox-5"
               class="items-title"
@@ -289,7 +289,7 @@
             </ul>
           </li>
 
-          <li style="position: relative">
+          <li class="list-item" style="position: relative">
             <div
               for="checkbox-6"
               class="items-title"
@@ -335,12 +335,66 @@
       </div>
     </footer>
 
+    <table>
+      <caption>
+        Animals
+      </caption>
+      <tr>
+        <th scope="col">Animal1</th>
+        <th scope="col">Name</th>
+        <th scope="col">Genre</th>
+        <th scope="col">Métier</th>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>M</td>
+        <td>Inconnu</td>
+      </tr>
+    </table>
+
+    <table>
+      <caption>
+        Energy generators info
+      </caption>
+      <tr>
+        <td></td>
+        <th scope="col">Col 1</th>
+        <th scope="col">Col 2</th>
+        <th scope="col">Col 3</th>
+        <th scope="col">Col 4</th>
+        <th scope="col">Col 5</th>
+      </tr>
+      <tr>
+        <th scope="row">Status 1</th>
+        <td>Active</td>
+        <td>Active</td>
+        <td>Disabled</td>
+        <td>Active</td>
+        <td>Disabled</td>
+      </tr>
+      <tr>
+        <th scope="row">Status 2</th>
+        <td>Disabled</td>
+        <td>Disabled</td>
+        <td>Active</td>
+        <td>Active</td>
+        <td>Disabled</td>
+      </tr>
+    </table>
+
     <script>
       function toggleCheckbox(checkboxId) {
         var checkbox = document.getElementById(checkboxId);
         checkbox.checked = !checkbox.checked;
-        console.log('HEYY', checkbox.checked); // Check console for debugging
       }
+
+      const listItems = document.querySelectorAll('.items-title');
+      listItems.forEach((item) => {
+        item.addEventListener('click', () => {
+          item.nextElementSibling.checked = !item.nextElementSibling.checked;
+        });
+      });
     </script>
   </body>
 </html>

@@ -254,3 +254,12 @@ label {
 .items-input:checked + .arrowIcon {
   transform: rotate(180deg);
 }
+
+.list-item {
+  cursor: pointer;
+}
+
+table {
+  border: 2px solid green;
+  padding: 10px;
+}
